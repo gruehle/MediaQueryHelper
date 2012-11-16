@@ -1,0 +1,66 @@
+/* Outer div */
+#media-query-preview {
+    height: 240px;
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    font-size: 12px;
+}
+
+/* Div holding iframe */
+#media-query-preview div.preview-holder {
+    display: inline-block;
+    position: absolute;
+    height: 200px;
+    top: 30px;
+}
+
+/* iframe */
+#media-query-preview iframe {
+    box-shadow: 0 0 9px #aaa;
+    -webkit-transform-origin: top left;
+}
+
+/* Size label/link */
+#media-query-preview .size-link {
+    color: #888;
+    position: absolute;
+    top: 187px;
+    width: 100%;
+    text-align: center;
+}
+
+#media-query-preview iframe.highlighted {
+    box-shadow: 0 0 50px #6c7afa;
+}
+
+#media-query-preview iframe.dimmed {
+    opacity: 0.2;
+}
+
+/* Toolbar icon */
+#media-query-preview-icon {
+    background: url(MediaQueryPreviewIcon.svg);
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+}
+
+/* Status text */
+#media-query-status {
+    font-style: italic;
+}
+
+/* Select file overlay */
+/*
+#media-query-preview .select-file {
+    position: relative;
+    width: 450px;
+    top: 70px;
+    margin: auto;
+    background: #fff;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px #aaa;
+}
+*/
