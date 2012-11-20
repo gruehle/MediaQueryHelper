@@ -190,7 +190,16 @@ define(function (require, exports, module) {
             $preview.find(".no-preview-file").remove();
             
             if (previewFileFound) {
-                $preview.find("iframe").attr("src", previewDocumentPath);
+                var $iframes = $preview.find("iframe");
+                
+                // Can't just compare src with previewDocumentPath since src may have "file://localhost" prepended
+                if ($iframes[0].src.indexOf(previewDocumentPath) !== -1) {
+                    $iframes.each(function (index, frame) {
+                        frame.contentWindow.location.reload(true);
+                    });
+                } else {
+                    $iframes.attr("src", previewDocumentPath);
+                }
             } else {
                 brackets.fs.stat(previewDocumentPath, function (err) {
                     if (!err) {
