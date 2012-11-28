@@ -41,9 +41,13 @@
 /* Toolbar icon */
 #media-query-preview-icon {
     background: url(MediaQueryPreviewIcon.svg);
+    background-repeat: no-repeat;
     display: inline-block;
+    position: relative;
     width: 24px;
     height: 16px;
+    top: 2px;
+    padding-right: 8px;
 }
 
 /* Status text */
