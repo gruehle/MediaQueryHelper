@@ -132,8 +132,8 @@ define(function (require, exports, module) {
         }
     });
     
-    // Add preview to the main toolbar
-    $preview.hide().appendTo("#main-toolbar");
+    // Add preview toolbar above editor area
+    $preview.hide().insertBefore("#editor-holder");
 
     // Highlight thumbnail for media selector being edited
     var _editor; // Editor whose cursor we are tracking

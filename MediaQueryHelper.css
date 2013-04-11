@@ -5,6 +5,9 @@
     overflow-x: auto;
     position: relative;
     font-size: 12px;
+
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.10);
+    z-index: 18; /* @z-index-brackets-toolbar - keep shadow above editor-holder even though it's a later sibling */
 }
 
 /* Div holding iframe */
