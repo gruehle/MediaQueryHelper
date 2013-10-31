@@ -236,6 +236,24 @@ define(function (require, exports, module) {
         });
     }
     
+    // Called before a project is closed.
+    function _onBeforeProjectClose() {
+        // Remove old doc change handlers and references
+        documents.forEach(function (doc) {
+            $(doc).off("change", _documentChangeHandler);
+            $(doc).off("deleted", _documentDeletedHandler);
+            doc.releaseRef();
+        });
+        documents = [];
+        
+        // Release old queries
+        queries.forEach(function (query) {
+            query.dispose();
+        });
+        queries = [];
+        hasUnterminated = {};
+    }
+    
     // Called when a new project is opened
     function _onProjectOpen() {
         function _loadFileAndScan(fullPath) {
@@ -257,19 +275,9 @@ define(function (require, exports, module) {
             return oneFileResult.promise();
         }
         
-        // Remove old doc change handlers and references
-        documents.forEach(function (doc) {
-            $(doc).off("change", _documentChangeHandler);
-            $(doc).off("deleted", _documentDeletedHandler);
-            // doc.releaseRef();
-        });
-        
-        // Release old queries
-        queries.forEach(function (query) {
-            query.dispose();
-        });
-        queries = [];
-        hasUnterminated = {};
+        // _onBeforeProjectClosed should have been called by now
+        console.assert(documents.length === 0, "MediaQueryUtils: Old documents still around.");
+        console.assert(queries.length === 0, "MediaQueryUtils: Old queries still around.");
         
         FileIndexManager.getFileInfoList("css").done(function (fileInfos) {
             Async.doInParallel(fileInfos, function (fileInfo, number) {
@@ -354,10 +362,8 @@ define(function (require, exports, module) {
         return result;
     }
     
+    $(ProjectManager).on("beforeProjectClose", _onBeforeProjectClose);
     $(ProjectManager).on("projectOpen", _onProjectOpen);
-    // "projectOpen" isn't sent for initial project, load on
-    // appReady event
-    AppInit.appReady(_onProjectOpen);
     
     exports.findAllMatches = findAllMatches;
     exports.findClosestMatch = findClosestMatch;

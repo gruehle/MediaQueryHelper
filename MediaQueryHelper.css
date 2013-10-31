@@ -1,5 +1,6 @@
 /* Outer div */
 #media-query-preview {
+    background-color: white;
     height: 240px;
     width: 100%;
     overflow-x: auto;
@@ -7,7 +8,12 @@
     font-size: 12px;
 
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.10);
-    z-index: 18; /* @z-index-brackets-toolbar - keep shadow above editor-holder even though it's a later sibling */
+    z-index: 16; 
+}
+
+.query-related-file {
+    float: right;
+    color: #888;
 }
 
 /* Div holding iframe */
@@ -41,33 +47,34 @@
     opacity: 0.2;
 }
 
+/* Alert */
+#media-query-preview .alert-box {
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 18px;
+    color: #ac8645;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+
 /* Toolbar icon */
 #media-query-preview-icon {
     background: url(MediaQueryPreviewIcon.svg);
     background-repeat: no-repeat;
-    display: inline-block;
-    position: relative;
-    width: 24px;
-    height: 16px;
-    top: 2px;
-    padding-right: 8px;
+    background-position: 0 0;
+}
+
+#media-query-preview-icon.active {
+    background-position: 0 -24px;
 }
 
 /* Status text */
 #media-query-status {
+    font-size: 1.1em;
     font-style: italic;
+    margin-left: 15px;
 }
-
-/* Select file overlay */
-/*
-#media-query-preview .select-file {
-    position: relative;
-    width: 450px;
-    top: 70px;
-    margin: auto;
-    background: #fff;
-    padding-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 4px 15px #aaa;
-}
-*/

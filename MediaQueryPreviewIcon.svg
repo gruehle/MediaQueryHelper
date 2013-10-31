@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="24px" height="16px" viewBox="0 0 24 16" enable-background="new 0 0 24 16" xml:space="preserve">
-<rect fill-rule="evenodd" clip-rule="evenodd" fill="#ABABAB" width="6" height="7"/>
-<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ABABAB" points="0,8 7,8 7,0 16,0 16,11 0,11 "/>
-<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#ABABAB" points="0,12 17,12 17,0 24,0 24,16 0,16 "/>
+	 width="24px" height="48px" viewBox="0 0 24 48" enable-background="new 0 0 24 48" xml:space="preserve">
+<rect x="4" y="4" fill="#ABABAB" width="4.062" height="7"/>
+<polygon fill="#ABABAB" points="4,12 9,12 9,4 13.625,4 13.625,15 4,15 "/>
+<polygon fill="#ABABAB" points="4,16 14.667,16 14.667,4 20,4 20,20 4,20 "/>
+<rect x="4" y="28" fill="#78B2F2" width="4.062" height="7"/>
+<polygon fill="#78B2F2" points="4,36 9,36 9,28 13.625,28 13.625,39 4,39 "/>
+<polygon fill="#78B2F2" points="4,40 14.688,40 14.688,28 20,28 20,44 4,44 "/>
 </svg>
